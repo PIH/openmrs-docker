@@ -7,13 +7,14 @@ Usage:
   * **-t motech**: Records this image with the local docker engine as "motech"
   * **.**: - Build from the current directory (should be relative to current directory)
   
-* Create (and run) container from an image:  **docker run -d -p 8080:8080 --name motech motech**
+* Create (and run) container from an image:  **docker run -d -p 8081:8080 -p 3307:3306 -p 5001:5000 --link=dhis2 --name motech motech**
   * **-d**:  Run in detached mode.  This keeps the container running in the background.
   * **-p HOST:CONTAINER**: Enables connection from host on a given port, to container on a given port
     * Tomcat is required.  Optional are 3306 (MySQL), 61616 (ActiveMQ) and 5000 (Debugger)
+  * **--link=dhis2**: This is necessary for this container to be able to connect to the DHIS2 container, at least until another approach is taken (eg. docker-compose)
   * **--name motech**: Names the container for later reference.
   * **motech**: The name of the image to build this container from (should match the tag from above build)
-
+  
 * Stop a running container:  **docker stop motech**
 * Re-start a named container:  **docker start motech**
 * To run a command in a running container (commonly just bash):  **docker exec -ti dhis2 bash**
