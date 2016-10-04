@@ -5,6 +5,7 @@ MAINTAINER Michael Seaton <mseaton@pih.org>
 # Install packages
 
 RUN apt-get update
+RUN apt-get -y install net-tools
 RUN apt-get -y install openjdk-8-jdk
 RUN apt-get -y install tomcat7-user
 RUN apt-get -y install activemq
