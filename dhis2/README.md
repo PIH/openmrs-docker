@@ -30,7 +30,7 @@ Usage:
   * **--volumes-from dhis2**: Mount any filesystem volumes that are exposed by the dhis2 container, so we can work with them
   * Basically, this uses an ubuntu:16.04 image as a minimal image we already have lying around, and mounts the files from a running container
 
-* Tail the log file: **docker run --rm --volumes-from dhis2 -t -i ubuntu:16.04 tail -f /home/dhis2/tomcat/logs/catalina.out**
+* Tail the log file: **docker run --rm --volumes-from dhis2 -t -i ubuntu:16.04 tail -f /home/dhis/tomcat/logs/catalina.out**
 
 Developer hints:
 
