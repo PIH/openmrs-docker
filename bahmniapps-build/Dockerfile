@@ -11,7 +11,7 @@ RUN npm install -g grunt-cli
 RUN gem install compass
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 
-RUN echo '{ "allow_root": true }' > /root/.bowerrc
+RUN echo '{ "allow_root": true, "registry": "https://registry.bower.io" }' > /root/.bowerrc
 
 WORKDIR /bahmniapps/ui
 CMD scripts/package.sh
