@@ -7,4 +7,4 @@ sudo rm -fR /tmp/bahmniapps
 git clone https://github.com/$FORK_NAME/openmrs-module-bahmniapps /tmp/bahmniapps
 ( cd /tmp/bahmniapps && git checkout $VERSION_NUM )
 
-docker run -v /tmp/bahmniapps:/bahmniapps bahmniapps-build ./scripts/package.sh
+docker run -v /tmp/bahmniapps:/bahmniapps bahmni/bahmniapps-build ./scripts/package.sh
